@@ -1,2 +1,2 @@
-# CodeUp기초100제
+# CodeUp파이썬100제
  https://codeup.kr/problemsetsol.php?psid=33
