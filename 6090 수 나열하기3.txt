@@ -1,0 +1,26 @@
+a, m, d, n = map(int, input().split())
+resultNum = 0
+cnt = 1
+#a=1, m=-2, d=1, n=7
+#1 -1 3 -5 11 -21 43
+#1, (1*-2)+1, ((1*-2)+1)*-2+1
+#a, (a*m)+d, ((a*m)+d)*m)+d, (((a*m)+d)*m)+d)*m+d
+#a, am+d, am^2+md+d, am^3+m^2d+md+d,am^4+m^3d+m^2d+md+d
+#1,    2,         3,              4,                  5,
+
+#3...am^2+md+d = am^2+(m^1+1)*d
+#4...am^3+m^2d+md+d = am^3+(m^2+m^1+1)*d
+#5...am^4+m^3d+m^2d+md+d = am^4+(m^3+m^2+m^1+1)*d
+if(n >= 3):
+    middleCal = 0
+    while cnt <= n-2:
+        middleCal += m ** cnt
+        cnt += 1
+    middleCal = (middleCal + 1) * d
+    resultNum = a*m**(n-1) + middleCal
+    print(resultNum)
+else:
+    if(n == 1):
+        print(a)
+    elif(n == 2):
+        print(a*m + d)

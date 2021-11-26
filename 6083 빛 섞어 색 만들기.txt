@@ -1,0 +1,8 @@
+r, g, b = map(int, input().split())
+cnt = 0;
+for rIndex in range(0,r):
+    for gIndex in range(0,g):
+        for bIndex in range(0,b):
+            print(rIndex, gIndex, bIndex)
+            cnt += 1
+print(cnt)

@@ -1,0 +1,12 @@
+a = int(input()) 
+sum = 0
+index = 0
+
+while a >= sum: 
+    index += 1
+    sum += index
+    #print(index, sum) 
+    if(a == sum):
+        index -= 1
+
+print(index)

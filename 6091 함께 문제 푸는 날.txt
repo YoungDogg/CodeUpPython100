@@ -1,0 +1,31 @@
+a, b, c = map(int, input().split())
+
+#최소공배수
+storedNum = 1;
+num2Divide = 1
+maxNumOfABC = (a if(a>b) else b) if (a if(a>b) else b) > c else c
+
+def divide2Of3 (arg1, arg2, num2Divide): # 2 값이 나누어 떨어지면 참, 아님 거짓
+    if(arg1%num2Divide == 0 and arg2%num2Divide == 0):
+        return True
+    else:
+        return False
+
+while num2Divide < maxNumOfABC: # 3값 중 제일 큰 값까지 나눌 때까지 실행
+
+    #print("storedNum",storedNum,"num2Divide", num2Divide, "a",a, "b",b,"c",c)    
+    
+    # 3값 중 2값이 나누어 떨어질 때
+    if( divide2Of3(a,b,num2Divide) or 
+        divide2Of3(b,c,num2Divide) or 
+        divide2Of3(c,a,num2Divide)):
+            a = a//num2Divide if(a%num2Divide==0) else a
+            b = b//num2Divide if(b%num2Divide==0) else b
+            c = c//num2Divide if(c%num2Divide==0) else c 
+            storedNum *= num2Divide 
+            #print("in if") 
+    num2Divide += 1
+    
+storedNum = storedNum * a * b * c
+
+print(storedNum)
